@@ -4,24 +4,10 @@ This is building code for image-text matching.
 
 
 
-
-
-## Examples
-
-
-
-- ### I2T Re-ranking
-    
-    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/i2t_rerank.png" width="70%"/>
 <br>
 
+## Retrieval Examples
 
-- ### T2I Re-ranking
-
-    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/t2i_rerank.png" width="70%" />
-<br>
-
-- ### Retrieval Examples
 <br>
 
 ![example](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/example_.png)
