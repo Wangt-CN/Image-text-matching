@@ -106,7 +106,7 @@ python vocab.py --data_path data --data_name coco_precomp
 
 
 - Training stage:
-  - The optional parameter setting is in option/MTFN_RR.yaml
+  - The optional parameter setting is in option/*.yaml
   - Run train.py (Note to modify the default settings at the top of python file)
 - Testing stage:
   - save the similarity matrix obtained in training stage
