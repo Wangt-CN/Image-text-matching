@@ -4,41 +4,9 @@ This is building code for image-text matching.
 
 
 
-## Matching Images and Text with Multi-modal Tensor Fusion and Re-ranking 
-
-1. Multi-modal Tensor Fusion Network (MTFN) efficiently encode bilinear interactions between visual and textual global feature representations via tensor-based tucker decomposition on image-text fusion and text-text fusion. It directly learns an accurate image-text similarity function from the two fusion branches and naturally combined with the widely used ranking loss to distinguish between the ground-truth and negative image-text pairs without seeking a common embedding space.
-
-2. Re-ranking (RR) scheme is a simple but effective step to further improve the matching performance, though it has rarely been explored in the community. It is designed to simultaneously refine the initial sentence retrieval and image retrieval results obtained by our MTFN based on their mutual information.
-
-   ![framework](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/framework_new.png)
 
 
-
-
-## Motivation
-
-The existing two main methods for image-text matching: the **embedding-based** and **classification-based**.
-<br>
-
- <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/intro_example_new2.png" width="50%" />
-
-
-- Embedding-based : higher accuracy **but**
-  - Construct the whole embedding space
-  - difficult
-  - time consuming
-- Classification-based : fast **but**
-  - binary classification problem
-  - "match" or "mismatch" 
-  - low accuracy
-
-So we propose our MTFN-RR to *combine the advantages of these two paradigms, that is balancing retrieval performance and model efficiency in both training and testing stage*.
-
-<br>
-
-
-
-## More examples
+## Examples
 
 
 
