@@ -10,7 +10,7 @@ This is MTFN-RR, source code of Matching Images and Text with Multi-modal Tensor
 
 2. Re-ranking (RR) scheme is a simple but effective step to further improve the matching performance, though it has rarely been explored in the community. It is designed to simultaneously refine the initial sentence retrieval and image retrieval results obtained by our MTFN based on their mutual information.
 
-   ![framework](https://github.com/submissionwithsupp/MTFN-RR_Code/blob/master/fig/framework_all__.jpg)
+   ![framework](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/framework_all__.jpg)
 
 
 
@@ -19,27 +19,27 @@ This is MTFN-RR, source code of Matching Images and Text with Multi-modal Tensor
 
 
 - ### MTFN
-  <img src="https://github.com/submissionwithsupp/MTFN-RR_Code/blob/master/fig/framework_all_1.jpg" width="60%" height="60%" />
+  <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/framework_all_1.jpg" width="60%" height="60%" />
 
 - ### Re-ranking scheme
 
 
   - ### I2T Re-ranking
     
-    <img src="https://github.com/submissionwithsupp/MTFN-RR_Code/blob/master/fig/i2t_rerank.jpg" width="50%" height="50%" />
+    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/i2t_rerank.jpg" width="50%" height="50%" />
 
 
 
   - ### T2I Re-ranking
     
-    <img src="https://github.com/submissionwithsupp/MTFN-RR_Code/blob/master/fig/t2i_rerank.jpg" width="50%" height="50%" />
+    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/t2i_rerank.jpg" width="50%" height="50%" />
 
 
 
 
 
 ## Examples
-![example](https://github.com/submissionwithsupp/MTFN-RR_Code/blob/master/fig/example.jpg)
+![example](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/example.jpg)
 
 
 
