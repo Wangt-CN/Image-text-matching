@@ -1,6 +1,6 @@
 # Introduction
 
-This is MTFN-RR, source code of Matching Images and Text with Multi-modal Tensor Fusion and Re-ranking.  
+This is building code for image-text matching.  
 
 
 
@@ -10,36 +10,58 @@ This is MTFN-RR, source code of Matching Images and Text with Multi-modal Tensor
 
 2. Re-ranking (RR) scheme is a simple but effective step to further improve the matching performance, though it has rarely been explored in the community. It is designed to simultaneously refine the initial sentence retrieval and image retrieval results obtained by our MTFN based on their mutual information.
 
-   ![framework](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/framework_all__.jpg)
+   ![framework](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/framework_new.png)
 
 
 
 
-## Proposed Model (MTFN-RR) 
+## Motivation
+
+The existing two main methods for image-text matching: the **embedding-based** and **classification-based**.
+<br>
+
+ <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/intro_example_new2.png" width="50%" />
 
 
-- ### MTFN
-  <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/framework_all_1.jpg" width="60%" height="60%" />
+- Embedding-based : higher accuracy **but**
+  - Construct the whole embedding space
+  - difficult
+  - time consuming
+- Classification-based : fast **but**
+  - binary classification problem
+  - "match" or "mismatch" 
+  - low accuracy
 
-- ### Re-ranking scheme
+So we propose our MTFN-RR to *combine the advantages of these two paradigms, that is balancing retrieval performance and model efficiency in both training and testing stage*.
+
+<br>
 
 
-  - ### I2T Re-ranking
+
+## More examples
+
+
+
+- ### I2T Re-ranking
     
-    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/i2t_rerank.jpg" width="50%" height="50%" />
+    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/i2t_rerank.png" width="70%"/>
+<br>
 
 
+- ### T2I Re-ranking
 
-  - ### T2I Re-ranking
-    
-    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/t2i_rerank.jpg" width="50%" height="50%" />
+    <img src="https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/t2i_rerank.png" width="70%" />
+<br>
 
+- ### Retrieval Examples
+<br>
 
+![example](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/example_.png)
+<br>
+<br>
 
+![demo](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/demo.gif)
 
-
-## Examples
-![example](https://github.com/Wangt-CN/Image-text-matching/blob/master/fig/example.jpg)
 
 
 
@@ -57,7 +79,6 @@ wget https://scanproject.blob.core.windows.net/scan-data/vocab.zip
 We refer to the path of extracted files for `data.zip` as `$DATA_PATH` and files for `vocab.zip` to `./vocab` directory. Alternatively, you can also run vocab.py to produce vocabulary files. For example,
 
 ```
-python vocab.py --data_path data --data_name f30k_precomp
 python vocab.py --data_path data --data_name coco_precomp
 ```
 
@@ -65,25 +86,28 @@ python vocab.py --data_path data --data_name coco_precomp
 
 ## Usage
 
+### Code Structure
+
+```
+├── MTFN-RR/
+|   ├── engine.py           /* Files contain train/validation code
+|   ├── model.py            /* Files for the model layer
+|   ├── data.py             /* Files for construct dataset
+|   ├── utils.py            /* Files for tools
+|   ├── train.py             /* Files for main code
+|   ├── re_rank.py         /* Files for re-ranking in testing stage
+|   ├── vocab.py           /* Files for construct vocabulary
+|   ├── seq2vec.py         /* Files for sentence to vector
+|   ├── readme.md
+│   ├── option/
+| 	├── MTFN_RR.yaml/                 /* setting file
+```
+
+
+
 - Training stage:
   - The optional parameter setting is in option/MTFN_RR.yaml
   - Run train.py (Note to modify the default settings at the top of python file)
 - Testing stage:
   - save the similarity matrix obtained in training stage
   - Run rerank.py (Please note to modify the similarity matrix path)
-
-
-
-## Requirements
-
-We recommend the following dependencies：
-
-- Python 3.6
-- [PyTorch](http://pytorch.org/) 0.3.1
-- [NumPy](http://www.numpy.org/) (>1.12.1)
-- [TensorBoard](https://github.com/TeamHG-Memex/tensorboard_logger)
-- click
-- [skipthougths](https://github.com/Cadene/skip-thoughts.torch)
-
-
-
